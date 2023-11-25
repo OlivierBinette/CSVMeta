@@ -19,7 +19,7 @@ The package has no external dependencies beyond Python's standard library and is
 ## Installation
 
 ```bash 
-pip install bettercsv
+pip install csvmeta
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ pip install bettercsv
 Input and ouput data formats for the `read` and `write` functions are modelled on Python's csv module: data to write should be an iterable of rows, and data read will be an iterable of rows with string data types. The data header is always returned as the first row.
 
 ```python
-import bettercsv as bcsv
+import csvmeta as csvm
 
 data = [
     ['name', 'age', 'state'],
@@ -38,10 +38,10 @@ data = [
 ]
 
 # Write data to a csv file folder
-bcsv.write('mydata.csv', data)
+csvm.write('mydata.csv', data)
 
 # Read data from a csv file folder
-data = bcsv.read('mydata.csv')
+data = csvm.read('mydata.csv')
 list(data)
 ## [
 ##     ['name', 'age', 'state'],
@@ -60,7 +60,7 @@ Arbitrary metadata can be added to the metadata file by passing keyword argument
 Metadata can be read using the `metadata()` function
 
 ```python
-import bettercsv as bcsv
+import csvmeta as csvm
 
 data = [
     ['name', 'age', 'state'],
@@ -69,7 +69,7 @@ data = [
 ]
 
 # Write data and metadata to a csv file folder
-bcsv.write(
+csvm.write(
     'mydata.csv', 
     data, 
     header=True, 
@@ -83,7 +83,7 @@ bcsv.write(
     )
 
 # Read metadata from a csv file folder
-bcsv.metadata('mydata.csv')
+csvm.metadata('mydata.csv')
 ## {
 ##     "name": "mydata.csv",
 ##     "path": "data.csv",
