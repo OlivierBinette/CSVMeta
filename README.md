@@ -3,7 +3,9 @@
 **BetterCSV** is an extremely lightweight Python package designed to work with csv files and attached metadata. It writes data to an arbitrary folder such as `mydata.csv/` and creates two internal files: 
 
 - `mydata.csv/data.csv`: the usual csv file.
-- `mydata.csv/metadata.json`: metadata about the csv file, such as the [csv dialect](https://docs.python.org/3/library/csv.html#csv-fmt-params) used to read and write the csv data, and additional useful information such as the data schema and a header indicator.
+- `mydata.csv/metadata.json`: metadata about the csv file, such as the [csv dialect](https://docs.python.org/3/library/csv.html#csv-fmt-params).
+
+When reading data from `mydata.csv/`, it uses dialect information from the metadata file to read the csv data correctly. The metadata file can also be used to store additional information about the data, such as a data schema and a header indicator.
 
 The package has no external dependencies and is tested with Python 3.8+ on Linux, Windows, and macOS.
 
