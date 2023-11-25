@@ -2,7 +2,7 @@ import csv
 import json
 import os
 
-from bettercsv import metadata, read
+from csvmeta import metadata, read
 
 
 def test_read_csv(tmpdir, example_csv_data, example_metadata, dialect):
