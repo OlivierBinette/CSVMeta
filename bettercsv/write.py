@@ -10,11 +10,11 @@ def write(
     dirpath: str,
     rowsdata: Iterable[Iterable[Any]],
     schema: Optional[dict] = None,
-    header: bool = True,
+    header: bool = False,
     dialect: str | dict = DEFAULT_DIALECT,
 ) -> None:
     """
-    Write data to a CSV file and its associated metadata.
+    Write CSV data and optional metadata.
 
     Parameters
     ----------
@@ -27,7 +27,7 @@ def write(
     header : bool, optional
         Flag to indicate if the first row of the data is a header, by default True.
     dialect : str | dict, optional
-        The dialect to be used for writing the CSV file, by default DEFAULT_DIALECT.
+        The dialect to be used for writing the CSV file, by default DEFAULT_DIALECT (unix). See https://docs.python.org/3/library/csv.html#csv-fmt-params for valid parameters and more information.
     """
     _write_csv(dirpath, rowsdata, dialect)
     _write_metadata(dirpath, schema, header, dialect)

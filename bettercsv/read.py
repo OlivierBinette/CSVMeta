@@ -10,15 +10,17 @@ def read(dirpath: str) -> Iterable[Iterable[str]]:
     """
     Read CSV data from the specified directory path.
 
+    If specified, the dialect from the metadata file will be used for parsing the CSV file.
+
     Parameters
     ----------
     dirpath : str
-        The directory path containing the CSV file and its metadata.
+        The directory path containing the CSV file `data.csv` and its metadata file `metadata.json`.
 
     Returns
     -------
     Iterable[Iterable[str]]
-        An iterable of rows, where each row is an iterable of string values.
+        An iterable of rows, where each row is an iterable of string values. The header is always returned as the first row.
     """
     meta = metadata(dirpath)
     dialect = meta.get("dialect", DEFAULT_DIALECT)
