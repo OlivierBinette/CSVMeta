@@ -9,7 +9,7 @@ def test_write_csv(tmpdir, example_rowsdata, dialect, example_schema):
     """
     Test the write function for correct CSV and metadata output.
     """
-    dirpath = tmpdir.strpath
+    dirpath = os.path.join(tmpdir.strpath, "testdir.csv")
 
     # Call the write function
     write(dirpath, example_rowsdata, dialect, schema=example_schema)

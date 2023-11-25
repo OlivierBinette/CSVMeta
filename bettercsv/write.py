@@ -26,6 +26,9 @@ def write(
     additional_metadata : dict, optional
         Additional metadata to be written to the metadata file.
     """
+    if not os.path.exists(dirpath):
+        os.makedirs(dirpath)
+    
     _write_csv(dirpath, rowsdata, dialect)
     _write_metadata(dirpath, dialect, **additional_metadata)
 

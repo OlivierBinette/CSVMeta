@@ -33,6 +33,7 @@ bcsv.write('mydata.csv', data)
 
 # Read data from a csv file folder
 data = bcsv.read('mydata.csv')
+list(data)
 ## [
 ##     ['name', 'age', 'state'],
 ##     ['Nicole', '43', 'CA'],
@@ -73,16 +74,19 @@ bcsv.write(
     )
 
 # Read metadata from a csv file folder
-metadata = bcsv.metadata('mydata.csv')
+bcsv.metadata('mydata.csv')
 ## {
-##     'header': True,
-##     'schema': ['name', 'age', 'state'],
-##     'dialect': {
-##         'delimiter': ',',
-##         'quotechar': '"',
-##         'lineterminator': '\n'
+##     "dialect": {
+##         "delimiter": ",",
+##         "quotechar": "\"",
+##         "lineterminator": "\n"
 ##     },
-##     'description': 'This is an example dataset.'
+##     "header": true,
+##     "schema": [
+##         "name",
+##         "age",
+##         "state"
+##     ],
+##     "description": "This is an example dataset."
 ## }
-## 
 ```
