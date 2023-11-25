@@ -2,7 +2,7 @@ import csv
 import json
 import os
 
-from bettercsv import metadata, read, schema
+from bettercsv import metadata, read
 
 
 def test_read_csv(tmpdir, example_csv_data, example_metadata, dialect):
@@ -50,21 +50,3 @@ def test_metadata(tmpdir, example_metadata):
 
     # Verify the read schema matches the example schema
     assert result_metadata == example_metadata
-
-
-def test_schema(tmpdir, example_metadata):
-    """
-    Test the schema function for correct schema reading.
-    """
-    dirpath = tmpdir.strpath
-    metadata_filepath = os.path.join(dirpath, "metadata.json")
-
-    # Create a sample schema file in the temporary directory
-    with open(metadata_filepath, "w") as metadata:
-        json.dump(example_metadata, metadata)
-
-    # Call the schema function
-    result_schema = schema(dirpath)
-
-    # Verify the read schema matches the example schema
-    assert result_schema == example_metadata.get("schema")

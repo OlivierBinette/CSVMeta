@@ -5,14 +5,14 @@ import os
 from bettercsv import write
 
 
-def test_write_csv(tmpdir, example_rowsdata, example_schema, dialect):
+def test_write_csv(tmpdir, example_rowsdata, dialect, example_schema):
     """
     Test the write function for correct CSV and metadata output.
     """
     dirpath = tmpdir.strpath
 
     # Call the write function
-    write(dirpath, example_rowsdata, example_schema, True, dialect)
+    write(dirpath, example_rowsdata, dialect, schema=example_schema)
 
     # Verify CSV file content
     with open(os.path.join(dirpath, "data.csv"), "r") as csvfile:
@@ -29,4 +29,3 @@ def test_write_csv(tmpdir, example_rowsdata, example_schema, dialect):
         metadata = json.load(metafile)
         assert metadata["schema"] == example_schema
         assert metadata["dialect"] == dialect
-        assert metadata["header"] == True

@@ -74,23 +74,3 @@ def metadata(dirpath: str) -> dict:
     with open(metadata_filepath, "r") as metafile:
         metadata = json.load(metafile)
     return metadata
-
-
-def schema(dirpath: str) -> dict:
-    """
-    Read the schema of the CSV file from the specified directory path.
-
-    Parameters
-    ----------
-    dirpath : str
-        The directory path containing the schema information.
-
-    Returns
-    -------
-    dict
-        A dictionary representing the schema of the CSV file.
-    """
-    schema_filepath = os.path.join(dirpath, "metadata.json")
-    with open(schema_filepath, "r") as metadata:
-        metadata = json.load(metadata)
-    return metadata.get("schema", None)
