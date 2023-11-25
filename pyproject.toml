@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bettercsv"
+version = "0.0.1"
+authors = [{ name = "Olivier Binette", email = "olivier@olivierbinette.ca" }]
+readme = "README.md"
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+dev = [
+    "black",
+    "isort",
+]
+
+[project.urls]
+homepage = "https://github.com/OlivierBinette/BetterCSV"
+
+[tool.setuptools.packages.find]
+include = ["bettercsv", "bettercsv.*"]
+namespaces = false
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+multi_line_output = 3
+line_length = 120
+include_trailing_comma = true
