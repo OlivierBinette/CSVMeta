@@ -1,13 +1,15 @@
 import csv
 import json
 import os
-from typing import Any, Iterable, Optional
+from typing import Any, Iterable, Union
+
+_DialectType = Union[str, dict]
 
 DEFAULT_DIALECT = "unix"
 
 
 def write(
-    dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: str | dict = DEFAULT_DIALECT, **additional_metadata
+    dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: _DialectType = DEFAULT_DIALECT, **additional_metadata
 ) -> None:
     """
     Write CSV data and optional metadata.
@@ -30,7 +32,7 @@ def write(
     _write_metadata(dirpath, dialect, **additional_metadata)
 
 
-def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: str | dict = DEFAULT_DIALECT) -> None:
+def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: _DialectType = DEFAULT_DIALECT) -> None:
     """
     Internal function to write data to a CSV file.
 
@@ -54,7 +56,7 @@ def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: str | d
             writer.writerow(row)
 
 
-def _write_metadata(dirpath: str, dialect: str | dict = DEFAULT_DIALECT, **additional_metadata) -> None:
+def _write_metadata(dirpath: str, dialect: _DialectType = DEFAULT_DIALECT, **additional_metadata) -> None:
     """
     Internal function to write metadata associated with a CSV file.
 
