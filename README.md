@@ -1,3 +1,10 @@
+
+[![CodeFactor](https://www.codefactor.io/repository/github/olivierbinette/bettercsv/badge)](https://www.codefactor.io/repository/github/olivierbinette/bettercsv)
+[![Tests](https://github.com/OlivierBinette/BetterCSV/actions/workflows/test.yml/badge.svg)](https://github.com/OlivierBinette/BetterCSV/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/OlivierBinette/BetterCSV/graph/badge.svg?token=YHS28KEJB9)](https://codecov.io/gh/OlivierBinette/BetterCSV)
+![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+
+
 # BetterCSV
 
 **BetterCSV** is an extremely lightweight Python package designed to work with csv files and attached metadata. It writes data to an arbitrary folder such as `mydata.csv/` and creates two internal files: 
