@@ -7,10 +7,7 @@ DEFAULT_DIALECT = "unix"
 
 
 def write(
-    dirpath: str,
-    rowsdata: Iterable[Iterable[Any]],
-    dialect: str | dict = DEFAULT_DIALECT,
-    **additional_metadata
+    dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: str | dict = DEFAULT_DIALECT, **additional_metadata
 ) -> None:
     """
     Write CSV data and optional metadata.
@@ -28,7 +25,7 @@ def write(
     """
     if not os.path.exists(dirpath):
         os.makedirs(dirpath)
-    
+
     _write_csv(dirpath, rowsdata, dialect)
     _write_metadata(dirpath, dialect, **additional_metadata)
 
@@ -57,8 +54,7 @@ def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: str | d
             writer.writerow(row)
 
 
-def _write_metadata(
-    dirpath: str, dialect: str | dict = DEFAULT_DIALECT, **additional_metadata) -> None:
+def _write_metadata(dirpath: str, dialect: str | dict = DEFAULT_DIALECT, **additional_metadata) -> None:
     """
     Internal function to write metadata associated with a CSV file.
 
