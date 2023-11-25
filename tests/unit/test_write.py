@@ -2,7 +2,7 @@ import csv
 import json
 import os
 
-from bettercsv import write
+from csvmeta import write
 
 
 def test_write_csv(tmpdir, example_rowsdata, dialect, example_schema):
