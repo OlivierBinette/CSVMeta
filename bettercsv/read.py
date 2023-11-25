@@ -71,6 +71,6 @@ def metadata(dirpath: str) -> dict:
         A dictionary of metadata key-value pairs.
     """
     metadata_filepath = os.path.join(dirpath, "metadata.json")
-    with open(metadata_filepath, "r") as metafile:
+    with open(metadata_filepath, newline="") as metafile:
         metadata = json.load(metafile)
     return metadata

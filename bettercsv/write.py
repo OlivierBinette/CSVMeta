@@ -67,9 +67,9 @@ def _write_metadata(dirpath: str, dialect: str | dict = DEFAULT_DIALECT, **addit
     additional_metadata : dict, optional
         Additional metadata to be written to the metadata file.
     """
-    metadata = {"dialect": dialect}
+    metadata = {"name": os.path.basename(dirpath), "path": "data.csv", "mediatype": "text/csv", "dialect": dialect}
     metadata.update(additional_metadata)
 
     metadata_filepath = os.path.join(dirpath, "metadata.json")
-    with open(metadata_filepath, "w") as metafile:
+    with open(metadata_filepath, "w", newline="") as metafile:
         json.dump(metadata, metafile, indent=4)
