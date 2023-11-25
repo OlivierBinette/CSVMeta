@@ -3,7 +3,7 @@ import json
 import os
 from typing import Iterable, Union
 
-from bettercsv.write import DEFAULT_DIALECT
+from csvmeta.write import DEFAULT_DIALECT
 
 
 def read(dirpath: str) -> Iterable[Iterable[str]]:
