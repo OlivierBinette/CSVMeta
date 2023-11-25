@@ -1,7 +1,7 @@
 
-[![CodeFactor](https://www.codefactor.io/repository/github/olivierbinette/bettercsv/badge)](https://www.codefactor.io/repository/github/olivierbinette/bettercsv)
 [![Tests](https://github.com/OlivierBinette/BetterCSV/actions/workflows/test.yml/badge.svg)](https://github.com/OlivierBinette/BetterCSV/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/OlivierBinette/BetterCSV/graph/badge.svg?token=YHS28KEJB9)](https://codecov.io/gh/OlivierBinette/BetterCSV)
+[![CodeFactor](https://www.codefactor.io/repository/github/olivierbinette/bettercsv/badge)](https://www.codefactor.io/repository/github/olivierbinette/bettercsv)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
@@ -102,3 +102,17 @@ bcsv.metadata('mydata.csv')
 ##     "description": "This is an example dataset."
 ## }
 ```
+
+## Links and References
+
+- [CSV Module Documentation](https://docs.python.org/3/library/csv.html)
+- [Frictionless Tabular Data Resource Standard](https://specs.frictionlessdata.io/tabular-data-resource/)
+- [Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://www.rfc-editor.org/rfc/rfc4180)
+- [CSV on the Web](https://csvw.org/)
+
+
+## Changelog
+
+### 1.0.0 (2023-11-25)
+
+- Initial release

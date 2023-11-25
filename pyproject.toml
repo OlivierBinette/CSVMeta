@@ -4,9 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bettercsv"
-version = "0.0.1"
+version = "1.0.0"
+description = "Lightweight csv read/write, keeping track of csv dialect and other metadata."
 authors = [{ name = "Olivier Binette", email = "olivier@olivierbinette.ca" }]
 readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 [project.optional-dependencies]
 test = [
     "pytest",
@@ -19,6 +26,7 @@ dev = [
 
 [project.urls]
 homepage = "https://github.com/OlivierBinette/BetterCSV"
+Issues = "https://github.com/OlivierBinette/BetterCSV/issues"
 
 [tool.setuptools.packages.find]
 include = ["bettercsv", "bettercsv.*"]
