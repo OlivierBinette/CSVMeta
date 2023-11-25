@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bettercsv"
+name = "csvmeta"
 version = "1.0.0"
 description = "Lightweight csv read/write, keeping track of csv dialect and other metadata."
 authors = [{ name = "Olivier Binette", email = "olivier@olivierbinette.ca" }]
@@ -29,7 +29,7 @@ homepage = "https://github.com/OlivierBinette/BetterCSV"
 Issues = "https://github.com/OlivierBinette/BetterCSV/issues"
 
 [tool.setuptools.packages.find]
-include = ["bettercsv", "bettercsv.*"]
+include = ["csvmeta", "csvmeta.*"]
 namespaces = false
 
 [tool.black]
