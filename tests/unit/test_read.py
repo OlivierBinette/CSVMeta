@@ -7,7 +7,7 @@ from csvmeta import metadata, read
 
 def test_read_csv(tmpdir, example_csv_data, example_metadata, dialect):
     """
-    Test the read function for correct CSV reading and dialect handling.
+    Test read function for correct CSV reading and dialect handling.
     """
     dirpath = tmpdir.strpath
     csv_filepath = os.path.join(dirpath, "data.csv")
