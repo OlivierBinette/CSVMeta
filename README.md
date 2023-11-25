@@ -7,7 +7,7 @@
 
 When reading data from `mydata.csv/`, it uses dialect information from the metadata file to read the csv data correctly. The metadata file can also be used to store additional information about the data, such as a data schema and a header indicator.
 
-The package has no external dependencies and is tested with Python 3.8+ on Linux, Windows, and macOS.
+The package has no **external dependencies** and is tested with Python 3.8+ on Linux, Windows, and macOS.
 
 ## Installation
 
