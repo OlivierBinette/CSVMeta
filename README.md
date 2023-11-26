@@ -141,10 +141,15 @@ df
 
 ## Changelog
 
+### 1.1.1 (2023-11-25)
+
+- Change `Iterable` typing to `Sequence` to account for order and allow multiple passes over data.
+- Improve tests.
+
 ### 1.1.0 (2023-11-25)
 
-- Fix read function return type: now return list of lists instead of generator
+- Fix read function return type: now return list of lists instead of generator.
 
 ### 1.0.0 (2023-11-25)
 
-- Initial release
+- Initial release.

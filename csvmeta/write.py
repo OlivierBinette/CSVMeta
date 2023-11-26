@@ -1,7 +1,7 @@
 import csv
 import json
 import os
-from typing import Any, Iterable, Union
+from typing import Any, Sequence, Union
 
 _DialectType = Union[str, dict]
 
@@ -9,7 +9,7 @@ DEFAULT_DIALECT = "unix"
 
 
 def write(
-    dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: _DialectType = DEFAULT_DIALECT, **additional_metadata
+    dirpath: str, rowsdata: Sequence[Sequence[Any]], dialect: _DialectType = DEFAULT_DIALECT, **additional_metadata
 ) -> None:
     """
     Write CSV data and optional metadata.
@@ -18,7 +18,7 @@ def write(
     ----------
     dirpath : str
         The directory path where the CSV file and metadata will be saved.
-    rowsdata : Iterable[Iterable[Any]]
+    rowsdata : Sequence[Sequence[Any]]
         The data to be written to the CSV file.
     dialect : str | dict, optional
         The dialect to be used for writing the CSV file, by default DEFAULT_DIALECT (unix). See https://docs.python.org/3/library/csv.html#csv-fmt-params for valid parameters and more information.
@@ -32,7 +32,7 @@ def write(
     _write_metadata(dirpath, dialect, **additional_metadata)
 
 
-def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: _DialectType = DEFAULT_DIALECT) -> None:
+def _write_csv(dirpath: str, rowsdata: Sequence[Sequence[Any]], dialect: _DialectType = DEFAULT_DIALECT) -> None:
     """
     Internal function to write data to a CSV file.
 
@@ -40,7 +40,7 @@ def _write_csv(dirpath: str, rowsdata: Iterable[Iterable[Any]], dialect: _Dialec
     ----------
     dirpath : str
         The directory path where the CSV file will be saved.
-    rowsdata : Iterable[Iterable[Any]]
+    rowsdata : Sequence[Sequence[Any]]
         The data to be written to the CSV file.
     dialect : str | dict, optional
         The dialect to be used for writing the CSV file, by default DEFAULT_DIALECT.

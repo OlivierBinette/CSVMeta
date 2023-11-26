@@ -5,11 +5,10 @@ import pytest
 DIALECTS_LIST = [
     "excel",
     "unix",
-    {"delimiter": "|", "quotechar": "'", "quoting": csv.QUOTE_NONE, "lineterminator": "\n"},
+    {"delimiter": "|", "escapechar": "\\", "quotechar": "'", "quoting": csv.QUOTE_NONE, "lineterminator": "\n"},
     {
         "delimiter": ",",
-        "doublequote": False,
-        "escapechar": "\\",
+        "doublequote": True,
         "lineterminator": "\r\n",
         "quotechar": '"',
         "quoting": 0,  # Minimal quoting
@@ -39,7 +38,16 @@ def example_schema():
 @pytest.fixture
 def example_csv_data():
     # Return example CSV data
-    return [["Header1", "Header2"], ["Value1", "Value2"], ["Value3", "Value4"]]
+    return [
+        ["Header1", "Header2"],
+        ["Value1", None],
+        [0, 2 + 3j],
+        [True, False],
+        [1.0, Exception],
+        [dict(a=1, b=2), [3, 4]],
+        [{1, "a"}, (1, 2, 3)],
+        [csv.Dialect, csv.excel],
+    ]
 
 
 @pytest.fixture

@@ -1,12 +1,12 @@
 import csv
 import json
 import os
-from typing import Iterable, Union
+from typing import Sequence, Union
 
 from csvmeta.write import DEFAULT_DIALECT
 
 
-def read(dirpath: str) -> Iterable[Iterable[str]]:
+def read(dirpath: str) -> Sequence[Sequence[str]]:
     """
     Read CSV data from the specified directory path.
 
@@ -19,18 +19,16 @@ def read(dirpath: str) -> Iterable[Iterable[str]]:
 
     Returns
     -------
-    Iterable[Iterable[str]]
-        An iterable of rows, where each row is an iterable of string values. The header is always returned as the first row.
+    Sequence[Sequence[str]]
+        A sequence of rows, where each row is a sequence of string values. The header is always returned as the first row.
     """
     meta = metadata(dirpath)
     dialect = meta.get("dialect", DEFAULT_DIALECT)
 
-    reader = _read_csv(dirpath, dialect)
-
-    return list(reader)
+    return _read_csv(dirpath, dialect)
 
 
-def _read_csv(dirpath: str, dialect: Union[str, dict]) -> Iterable[Iterable[str]]:
+def _read_csv(dirpath: str, dialect: Union[str, dict]) -> Sequence[Sequence[str]]:
     """
     Internal function to read a CSV file using the specified dialect.
 
@@ -43,8 +41,8 @@ def _read_csv(dirpath: str, dialect: Union[str, dict]) -> Iterable[Iterable[str]
 
     Returns
     -------
-    Iterable[Iterable[str]]
-        An iterable of rows, where each row is an iterable of string values.
+    Sequence[Sequence[str]]
+        A sequence of rows, where each row is a sequence of string values.
     """
     csv_filepath = os.path.join(dirpath, "data.csv")
     with open(csv_filepath, newline="") as csvfile:
@@ -52,8 +50,8 @@ def _read_csv(dirpath: str, dialect: Union[str, dict]) -> Iterable[Iterable[str]
             reader = csv.reader(csvfile, dialect=dialect)
         else:
             reader = csv.reader(csvfile, **dialect)
-        for row in reader:
-            yield row
+
+        return list(reader)
 
 
 def metadata(dirpath: str) -> dict:

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "csvmeta"
-version = "1.1.0"
+version = "1.1.1"
 description = "Lightweight csv read/write, keeping track of csv dialect and other metadata."
 authors = [{ name = "Olivier Binette", email = "olivier@olivierbinette.ca" }]
 readme = "README.md"

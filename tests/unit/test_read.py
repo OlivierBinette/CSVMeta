@@ -31,7 +31,7 @@ def test_read_csv(tmpdir, example_csv_data, example_metadata, dialect):
 
     # Verify the read data matches the example data
     for expected_row, row in zip(example_csv_data, result):
-        assert list(row) == expected_row
+        assert list(row) == [str(x) if x is not None else "" for x in expected_row]
 
 
 def test_metadata(tmpdir, example_metadata):
