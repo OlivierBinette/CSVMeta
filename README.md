@@ -141,6 +141,11 @@ df
 
 ## Changelog
 
+### 1.1.2 (2023-11-25)
+
+- Make `DEFAULT_DIALECT` an explicit dictionary specification rather than "unix".
+- Add `DEFAULT_DIALECT` to tests.
+
 ### 1.1.1 (2023-11-25)
 
 - Change `Iterable` typing to `Sequence` to account for order and allow multiple passes over data.
