@@ -27,7 +27,7 @@ def read(dirpath: str) -> Iterable[Iterable[str]]:
 
     reader = _read_csv(dirpath, dialect)
 
-    return reader
+    return list(reader)
 
 
 def _read_csv(dirpath: str, dialect: Union[str, dict]) -> Iterable[Iterable[str]]:

@@ -43,7 +43,6 @@ csvm.write('mydata.csv', data)
 
 # Read data from a csv file folder
 data = csvm.read('mydata.csv')
-list(data)
 ## [
 ##     ['name', 'age', 'state'],
 ##     ['Nicole', '43', 'CA'],
@@ -104,6 +103,34 @@ csvm.metadata('mydata.csv')
 ## }
 ```
 
+### Reading to Pandas DataFrame
+
+```python
+import csvmeta as csvm
+
+data = [
+    ['name', 'age', 'state'],
+    ['Nicole', 43, 'CA'],
+    ['John', 28, 'DC']
+]
+
+# Write data and metadata to a csv file folder
+csvm.write('mydata.csv', data, header=True)
+
+
+data = csvm.read('mydata.csv')
+metadata = csvm.metadata('mydata.csv')
+if metadata.get("header", False):
+    df = pd.DataFrame(data[1:], columns=data[0])
+else:
+    df = pd.DataFrame(data)
+
+df
+##      name age state
+## 0  Nicole  43    CA
+## 1    John  28    DC
+```
+
 ## Links and References
 
 - [CSV Module Documentation](https://docs.python.org/3/library/csv.html)
@@ -113,6 +140,10 @@ csvm.metadata('mydata.csv')
 
 
 ## Changelog
+
+### 1.1.0 (2023-11-25)
+
+- Fix read function return type: now return list of lists instead of generator
 
 ### 1.0.0 (2023-11-25)
 
