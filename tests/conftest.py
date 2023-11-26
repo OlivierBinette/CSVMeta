@@ -2,7 +2,10 @@ import csv
 
 import pytest
 
+import csvmeta
+
 DIALECTS_LIST = [
+    csvmeta.DEFAULT_DIALECT,
     "excel",
     "unix",
     {"delimiter": "|", "escapechar": "\\", "quotechar": "'", "quoting": csv.QUOTE_NONE, "lineterminator": "\n"},

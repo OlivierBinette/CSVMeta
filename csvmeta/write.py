@@ -5,7 +5,14 @@ from typing import Any, Sequence, Union
 
 _DialectType = Union[str, dict]
 
-DEFAULT_DIALECT = "unix"
+DEFAULT_DIALECT = {
+    "delimiter": ",",
+    "quotechar": '"',
+    "doublequote": True,
+    "skipinitialspace": False,
+    "lineterminator": "\n",
+    "quoting": csv.QUOTE_ALL,
+}
 
 
 def write(
