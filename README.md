@@ -1,7 +1,7 @@
 
 [![PyPI version](https://badge.fury.io/py/csvmeta.svg)](https://badge.fury.io/py/csvmeta)
 [![Tests](https://github.com/OlivierBinette/CSVMeta/actions/workflows/test.yml/badge.svg)](https://github.com/OlivierBinette/CSVMeta/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/OlivierBinette/CSVMeta/graph/badge.svg?token=YHS28KEJB9)](https://codecov.io/gh/OlivierBinette/CSVMeta)
+[![codecov](https://codecov.io/gh/OlivierBinette/BetterCSV/graph/badge.svg?token=YHS28KEJB9)](https://codecov.io/gh/OlivierBinette/BetterCSV)
 [![CodeFactor](https://www.codefactor.io/repository/github/olivierbinette/csvmeta/badge)](https://www.codefactor.io/repository/github/olivierbinette/csvmeta)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
